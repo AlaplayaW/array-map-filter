@@ -60,8 +60,27 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(movie => {
+    let label = "";
+    if (movie['rating'] < 60) {
+      label = 'rotten';
+    } else if (movie['rating'] > 75) {
+      label = 'certified fresh';
+    } else {
+      label = 'fresh';
+    }
+    movie.label = label;
+    return movie;
+  })
 }
 
+function getFoodCategories(foods) {
+  return foods.map(product => {
+    if (product['isVegetarian'] === true) {
+      return `${product.food} is suitable for vegetarians`;
+    } else return `${product.food} is not suitable for vegetarians`;
+  });
+}
 
 
 // Ne pas modifier l'export
