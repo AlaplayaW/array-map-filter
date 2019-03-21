@@ -74,13 +74,6 @@ function getMoviesFreshness(movies) {
   })
 }
 
-function getFoodCategories(foods) {
-  return foods.map(product => {
-    if (product['isVegetarian'] === true) {
-      return `${product.food} is suitable for vegetarians`;
-    } else return `${product.food} is not suitable for vegetarians`;
-  });
-}
 
 
 // Ne pas modifier l'export
