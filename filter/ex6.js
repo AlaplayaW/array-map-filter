@@ -27,13 +27,13 @@ Sortie attendue:
 */
 
 
-// function filterOffensiveComments(comments, bannedWords) {
-//   const bannedW = bannedWords.toLowerCase();
+
+// const filterOffensiveComments = (comments, bannedWords) => {
 //   return comments.filter(comment => {
-//     const status = comment.toLowerCase().includes(bannedW);
-//     if (status === false) {
-//       return comment
-//     } 
+//     for (let i = 0; i < bannedWords.length; i++) {
+//       comment.toLowerCase().indexOf(bannedWords[i]) == -1;
+//     }
+//   return comment
 //   });
 // }
 
@@ -41,33 +41,18 @@ Sortie attendue:
 //   return comments.filter(comment => comment.toLowerCase().indexOf(bannedWords) = -1);
 // };
 
-// const filterOffensiveComments = (comments, bannedWords) => {
-//   const tab = comments.filter(comment => {
-//     for (let i = 0; i < bannedWords.length; i++) {
-//       if (comment.toLowerCase().includes(bannedWords[i])) {
-//         return false
-//       } else {
-//         return true
-//       }
-//     }
-//   });
-//   if (tab == false) {
-//     return comment
-//   }
-// }
-
 function filterOffensiveComments(comments, bannedWords) {
 
   return comments.filter(arrItem => {
-  let check = true;
-  for (let i = 0; i < bannedWords.length; i++) {
-  arrItem.toLowerCase().includes(bannedWords[i]) ? check = check * false : check *= true;
-  }
-  
-  return check;
+    let check = true;
+    for (let i = 0; i < bannedWords.length; i++) {
+      arrItem.toLowerCase().includes(bannedWords[i]) ? check = check * false : check *= true;
+    }
+
+    return check;
   });
-  
-  }
+
+}
 
 // Ne pas modifier l'export
 module.exports = filterOffensiveComments;

@@ -24,7 +24,19 @@ Sortie attendue:
 
 */
 
-function getCampusesTeachingReact(campuses) {
-}
+let getCampusesTeachingReact = (campuses => {
+  return campuses.filter((campus) => {
+    return campus.curriculums.includes('JS/React') == true;
+  }).map((campus) => {
+    return campus.city
+  })
+  });
 
+// let getJedisNames = (characters => {
+//   return characters.filter((perso) => {
+//     return perso.side === 'light'
+//   }).map((perso) => {
+//     return perso.name
+//   })
+// });
 module.exports = getCampusesTeachingReact;

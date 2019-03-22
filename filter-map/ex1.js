@@ -22,7 +22,29 @@ Sortie attendue:
 
 */
 
-function getJedisNames(characters) {
-}
+// function getJedisNames(characters) {
+//   return characters.map(character => {
+//     return characters.filter(character => {
+//       return character.side = 'light';
+//     })
+//   })
+// }
 
+
+let getJedisNames = (characters => {
+  return characters.filter((perso) => {
+    return perso.side === 'light'
+  }).map((perso) => {
+    return perso.name
+  })
+});
+
+    // let isJedisLight = characters.filter((perso) => {
+    //   return perso.side === 'light'
+    // }).map((perso) => {
+    //   return perso.name
+    // })
+
+
+// Ne pas modifier l'export
 module.exports = getJedisNames;
